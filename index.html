@@ -1,123 +1,196 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Alcrobeo LLC.</title>
-    <link href="main.css" rel="stylesheet">
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alcrobeo LLC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="pace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    
     <style>
-    @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lemonada&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Rationale&display=swap');
-
-
-body {
-    margin: 0px;
-    padding: 0px;
-    background-color: #19181D;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Monument Extended";
+    background: white;
 }
 
-.circle {
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    background: linear-gradient(#313247 0%,#19181D 30%);
-    position: absolute;
-    top: 20%;
-    left: 35%;
-}
-
-.circle:before,
-.circle:after {
-    content: '';
-    height: 400px;
-    width: 400px;
-    background: linear-gradient(#FFD1DA 0%,#FF849D 5%,#2D2133 25%);
-    border-radius: 50%;
+h1 {
     position: absolute;
     top: 42%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-filter:blur(7px);
-    z-index: -1;
-    
+    transform: translate(-50%, -50%);
+    color: #101010;
+    font-size: 100px;
+    font-family: 'Lemonada', cursive;
+
 }
 
-.circle:after {
-    width: 415px;
-    top: 35%;
-    -webkit-filter:blur(14px);
-    opacity: .3;
+body{
+  margin:0px;
+  padding:0px;
 }
 
-.msg {
-    font-family: 'Righteous', cursive;   
-    font-size: 30px;
-    color: white;
-    letter-spacing: 15px;
+.pace {
+  pointer-events: none;
+  user-select: none;
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  border: 0px;
+  height: 1px;
+  overflow: hidden;
+  background:#1b1b1b;
+}
+
+.pace .pace-progress {
+  box-sizing: border-box;
+  transform: translate3d(0, 0, 0);
+  max-width: 400px;
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 100%;
+  background: grey;
+}
+
+.pace.pace-inactive {
+  display: none;
+}
+
+#preloader{
+  width:100%;
+  height:100vh;
+  background:#101010;
+  overflow:hidden;
+  position:fixed;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.p {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Cinzel Decorative', cursive;
+
+}
+
+/* Dive in button work */
+a {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.notifymsg {
-    font-family: 'IM Fell English SC', serif;
-    font-size: 22px;
-    color: #FFD1DA;
-    letter-spacing: 2px;
-    position: absolute;
-    bottom: 17%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.field{
-    position: absolute;
-    bottom: 10%;
-    left: 54%;
-    transform: translateX(-50%);
-}
-
-.field input {
-    height: 35px;
-    width: 300px;
-    background-color: #101113;
-    outline: none;
-    border: none;
-    border-radius: 35px;
+    width: 160px;
+    height: 40px;
+    margin-top: 80px;
+    background: #00072f;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 40px;
+    color: #555;
+    text-transform: uppercase;
+    text-decoration: none;
     font-family: sans-serif;
-    font-size: 10px;
-    color: white;
-    letter-spacing: 1px;
-    padding-left: 15px;
+    letter-spacing: 6px;
+    transition: 5s;
+    overflow: hidden;
+    cursor: url(cursor.png.png) pointer;
+}
+a:hover
+{
+    color: #fff;
+    box-shadow: -15px 0 50px rgba(255,20,152,1), 15px 0 50px rgba(122,0,255,1);
+    text-shadow: 0 0 10px rgba(255,255,255,0.50), 0 0 25px rgba(255,255,255,0.50),
+    0 0 35px rgba(255,255,255,0.50);
+}
+a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,20,152,0);
+    filter: blur(4px);
+    transition: 5s;
+    z-index: -1;
 }
 
-.field button {
-    height: 35px;
-    width: 100px;
-    background-color: red;
-    font-family: 'Rationale', sans-serif;
-    font-size: 11px;
-    color: white;
-    letter-spacing: 1px;
-    border: none;
-    outline: none;
-    border-radius: 35px;
-    position: relative;
-    left: -100px;
-    z-index: 999;
+a:hover:before 
+{
+    background: rgba(022,20,152,1);
+    transform: scaleX(5);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(122,0,255,0);
+    filter: blur(4px);
+    transition: 5s;
+    z-index: -1;
+    mix-blend-mode: lighten;
+}
+
+a:hover::after 
+{
+    background: rgba(122,0,255,1);
+    transform: scaleX(5);
 }
 
     </style>
-    <body>
-    <span class="circle"></span>
-        <span class="msg">Life Is Robotic|Alcrobeo</span>
-        <span class="notifymsg">Be the First to discover the future. </span>
-        <span class="field">
-        <input type="email" placeholder="ENTER YOUR EMAIL"/>
-            <button>Get Invited</button>
-        </span>
-        
-    </body>
+    </head>
+<body>
+        <h1 class="title">Alcrobeo</h1>
+        <a href="#">Dive in</a>
+        <div id="preloader">
+            <div class="p">Life is Robotic</div>
+        </div>
+
+        <script>
+        paceOptions = {
+        ajax: true,
+        document: true,
+        eventLag: false
+        };
+        Pace.on('done', function() {
+        $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+        $('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+        TweenMax.from(".title", 2, {
+             delay: 1.8,
+                  y: 10,
+                  opacity: 0,
+                  ease: Expo.easeInOut
+            })
+       });
+      </script>
+
+</body>
 </html>

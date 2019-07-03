@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Carter+One&display=swap');
+
+
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1490131784822-b4626a8ec96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat 50% 50%;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.menu-strip {
+    background: #fff;
+    position: fixed;
+    width: 10%;
+    height: 100vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle-btn ion-icon {
+     font-size: 28px;
+     color: #a66f2c;
+
+}
+
+.nav .menu {
+    position: absolute;
+    width: 0%;
+    height: 100vh;
+    left: 10%;
+    background: #fff;
+}
+
+.images {
+    position: absolute;
+    width: 0%;
+    height: 100vh;
+    left: 55%;
+    background: url("https://images.unsplash.com/photo-1478432780021-b8d273730d8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* background: #000;*/ 
+}
+
+.nav .menu ul {
+    list-style: none;
+    position: absolute;
+    top:36%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+#order {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #afafaf;
+}
+
+.nav .menu ul li {
+    color: #594637;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: 60px;
+}
+#tag {
+    font-size: 18px;
+    font-weight: lighter;
+    color: #afafaf;
+    transition: 0.3s;
+}
+
+.media {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.media ul li {
+    display: inline-block;
+    color:#afafaf;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.nav .menu ul li:hover #tag {
+    color: gold;
+    transition: 1s;
+}
+
+#menu {
+    background: linear-gradient(#5b5b5b, #5b5b5b) left no-repeat, #afafaf;
+    background-size: 0% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 1s;
+}
+
+#menu:hover {
+    background-size: 100% 100%;
+}
+.bg1 {
+    display: block;
+    background: url("https://images.unsplash.com/photo-1478432780021-b8d273730d8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.bg2 {
+    display: block;
+    background: url("https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=682&q=80") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.bg3 {
+    display: block;
+    background: url("https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.bg4 {
+    display: block;
+    background: url("https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.hide {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .images {
+        display: none;
+    }
+    .nav .menu {
+        width: 0;
+        left: 20%;
+    }
+    .menu ul {
+        margin-top: 80px;
+        margin-left: -20px;
+    }
+    .menu-strip {
+        width:20%;
+    }
+    .toggle-btn {
+        position: absolute;
+        transform: translate(-50%, -90%);
+    }
+
+    .menu li #menu {
+        font-size: 18px;
+    }
+
+    #tag {
+        display: none;
+    }
+    #order {
+        display: none;
+    }
+    
+    .media {
+        display: none;
+    }
+}
+
+
+.line {
+    position: relative;
+    top: 50%;
+    width: 16em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255, 0.75);
+    font-size: 180%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-family: 'Carter One', cursive;
+
+
+    }
+
+    .anim-typewriter {
+        animation: typewriter 1s steps(40) 1s 1 normal both,
+        blinkTextCursor 500ms steps(40) infinite normal;
+    }
+
+    @keyframes typewriter {
+        from {
+            width: 0;
+        }
+        to {
+            width: 16em;
+        }
+    }
+
+    @keyframes blinkTextCursor {
+        from {
+            border-right-color: rgba(red, green);
+        }
+        to {
+            border-right-color: transparent;
+        }
+    }
